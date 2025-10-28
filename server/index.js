@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+const HOST = process.env.HOST || '0.0.0.0';
 const PUBSUB_TOPIC = process.env.PUBSUB_TOPIC;
 const INGEST_TOKEN = process.env.INGEST_TOKEN;
 
@@ -155,6 +156,6 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Ingestion API listening on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Ingestion API listening on http://${HOST === '0.0.0.0' ? '0.0.0.0' : HOST}:${PORT}`);
 });
