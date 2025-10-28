@@ -1,0 +1,14 @@
+{
+  "name": "mouse-risk-gate",
+  "private": true,
+  "version": "0.0.1",
+  "workspaces": [
+    "frontend",
+    "server"
+  ],
+  "scripts": {
+    "dev": "npm --workspace frontend run dev",
+    "build": "npm --workspace frontend run build && npm --workspace server run postbuild",
+    "start": "npm --workspace server start"
+  }
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mouse Risk Gate · Demo</title>
+    <style>
+      :root {
+        --bg:#0f172a;
+        --panel:#111827;
+        --ink:#e5e7eb;
+        --muted:#94a3b8;
+        --accent:#7c3aed;
+        --warn:#f97316;
+        --block:#ef4444;
+        --ok:#22c55e;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+        background: radial-gradient(1200px 600px at 80% -10%, #1e1b4b, var(--bg));
+        color: var(--ink);
+      }
+      .wrap {
+        max-width: 600px;
+        margin: 48px auto;
+        padding: 0 20px;
+      }
+      .card {
+        background: var(--panel);
+        padding: 28px;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 16px 40px rgba(15,23,42,0.4);
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 26px;
+      }
+      p { margin: 10px 0; color: var(--muted); }
+      form { display: grid; gap: 14px; margin: 20px 0; }
+      label { display: grid; gap: 6px; font-size: 14px; color: var(--ink); }
+      input {
+        background: #0b1220;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 10px;
+        padding: 10px 14px;
+        color: var(--ink);
+        font-size: 15px;
+      }
+      button {
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        background: var(--accent);
+        color: white;
+        font-size: 15px;
+      }
+      .meters {
+        display: grid;
+        gap: 16px;
+        margin: 20px 0 10px;
+      }
+      .meter {
+        background: rgba(255,255,255,0.08);
+        border-radius: 999px;
+        height: 12px;
+        overflow: hidden;
+      }
+      .bar {
+        height: 100%;
+        width: 0%;
+        background: var(--accent);
+        transition: width 120ms ease-out;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        border: 1px solid rgba(255,255,255,0.16);
+        color: var(--muted);
+      }
+      .badge.ok { color: var(--ok); border-color: var(--ok); }
+      .badge.warn { color: var(--warn); border-color: var(--warn); }
+      .badge.block { color: var(--block); border-color: var(--block); }
+      .status {
+        margin-top: 16px;
+        min-height: 24px;
+        font-weight: 500;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <h1>Mouse Risk Gate</h1>
+        <p>Test login &mdash; do not enter real credentials.</p>
+        <div id="app"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

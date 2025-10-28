@@ -1,0 +1,18 @@
+# Node / workspace
+node_modules/
+
+# Build output
+server/public/
+frontend/dist/
+
+# Env files
+.env
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# Misc
+.DS_Store
+Thumbs.db
